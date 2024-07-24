@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冬野夜空出道作！揪心至極的戀愛奇幻小說！</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            background-color: #000;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .container .boxTop {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .boxTop img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            line-height: 0;
+        }
+
+        table td {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        table tr {
+            padding: 0;
+            margin: 0;
+        }
+
+        .table-container {
+            display: flex;
+            width: 100%;
+        }
+
+        .word {
+            max-width: 850px;
+            height: 601px;
+            overflow: auto;
+            color: #333;
+            font-size: 18px;
+            line-height: 1.7;
+            margin: 0 auto;
+            padding: 20px;
+            word-wrap: break-word;
+            word-break: normal;
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+
+        pre {
+            margin: 0;
+            padding: 0;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            background-color: #ffffff;
+            white-space: -moz-pre-wrap;
+            white-space: pre-wrap;
+        }
+
+        .orange-border {
+            border: 5px solid #ccfffb;
+            border-radius: 20px;
+            background-color: #ffffff;
+        }
+
+        body,
+        pre {
+            font-family: "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU";
+        }
+
+        .paper {
+            background-image: url(./images/579007_21.jpg);
+            max-width: 980px;
+            height: auto;
+        }
+
+        .bold {
+            font-weight: bold;
+            background-color: #ffffff;
+        }
+
+        .boxYT {
+            position: relative;
+            width: 100%;
+            padding-bottom: 71%;
+            height: 0;
+            overflow: hidden;
+            background-image: url(./images/579007_15.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .boxYT iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="boxTop">
+            <img src="./images/579007_01.jpg" alt="">
+            <img src="./images/579007_02.jpg" alt="">
+            <img src="./images/579007_03.jpg" alt="">
+            <img src="./images/579007_04.jpg" alt="">
+          
+            <table width="980" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td><img src="./images/579007_05.jpg" alt=""></td>
+                    <td><img src="./images/579007_06.jpg" alt=""></td>
+                    <td><img src="./images/579007_07.jpg" alt=""></td>
+                    <td><img src="./images/579007_08.jpg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="./images/579007_09.jpg" alt=""></td>
+                    <td><img src="./images/579007_10.jpg" alt=""></td>
+                    <td><img src="./images/579007_11.jpg" alt=""></td>
+                    <td><img src="./images/579007_12.jpg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="./images/579007_13.jpg" alt=""></td>
+                    <td><img src="./images/579007_14.jpg" alt=""></td>
+                    <td>
+                        <div class="boxYT">
+                            <div id="muteYouTubeVideoPlayer"></div>
+                        </div>
+                    </td>
+                    <td><img src="./images/579007_16.jpg" alt=""></td>
+                </tr>
+            </table>
+            <img src="./images/579007_17.jpg" alt="">
+            <img src="./images/579007_18.jpg" alt="">
+            <img src="./images/579007_19.jpg" alt="">
+            <img src="./images/579007_20.jpg" alt="">
+            <div class="table-container">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="paper">
+                            <div class="word orange-border">
+                                <pre id="file-content"></pre>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <img src="./images/579007_22.jpg" alt="">
+            <img src="./images/579007_23.jpg" alt="">
+            <img src="./images/579007_24.jpg" alt="">
+        </div>
+    </div>
+    <script async src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        function onYouTubeIframeAPIReady() {
+            var player = new YT.Player('muteYouTubeVideoPlayer', {
+                height: '100%',
+                width: '100%',
+                videoId: 'FjFw5wCoBa8',
+                playerVars: {
+                    autoplay: 0,
+                    controls: 1,
+                    showinfo: 1,
+                    modestbranding: 0,
+                    loop: 0,
+                    fs: 1,
+                    cc_load_policy: 0,
+                    iv_load_policy: 3,
+                    autohide: 1
+                }
+            });
+        }
+
+        const filePath = './txt/word.txt';
+        fetch(filePath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('網路不OK');
+                }
+                return response.text();
+            })
+            .then(text => {
+                const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<span class="bold">$1</span>');
+                document.getElementById('file-content').innerHTML = formattedText;
+            })
+            .catch(error => {
+                console.error('讀取文件時發生錯誤:', error);
+            });
+    </script>
+</body>
+
+</html>
